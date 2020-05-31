@@ -23,9 +23,12 @@ def get_weather_data(term1=''):
             f'https://api.unsplash.com/search/collections?query={term1}&page=1&per_page=21&client_id=a3LeIdw1sJLTf4wV3b-9K9GUZ8UJ-PF9QkwL1mLAUYc')
         data = r.json()
         for img_data in data['results']:
-            file_name = str(img_data['id']) + ".jpg"
-            img_url = img_data['preview_photos'][0]['urls']['small']
-            li.append(img_url)
+            try:
+                file_name = str(img_data['id']) + ".jpg"
+                img_url = img_data['preview_photos'][0]['urls']['small']
+                li.append(img_url)
+            except:
+                continue
         return li
     else:
         r = requests.get(
