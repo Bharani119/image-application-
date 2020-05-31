@@ -1,0 +1,47 @@
+body {
+    padding-top: 70px;
+}
+
+.jumbotron {
+    color: #284738;
+    background: #dce2df;
+}
+
+.navbar-inverse {
+    /*background: #284738;*/
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #e0fff0;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #e0fff0;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+form {
+    white-space:nowrap;
+    display: inline-block;
+    padding-right: 550;
+    /*align-items: center;*/
+    /*color: blue;
+    /*background-color: green; */
+    /*text-align: center;*/
+}
+button {
+    background-color: lightgreen;
+}
+.thumbnail {
+    background-color: lightgrey;
+}
+.upper-part {
+    display: inline-block;
+    margin-left: 50;
+    /*padding-left: 450;*/
+    /*display: flex;*/
+    align-content: flex-end
+}

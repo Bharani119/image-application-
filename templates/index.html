@@ -1,0 +1,153 @@
+<!-- <img src="https://images.unsplash.com/photo-1501791187590-9ef2612ba1eb?ixlib=rb-1.2.1"> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photonomia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <style type="text/css">
+        body {
+    padding-top: 70px;
+}
+
+.jumbotron {
+    color: #284738;
+    background: #dce2df;
+}
+
+.navbar-inverse {
+    /*background: #284738;*/
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #e0fff0;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #e0fff0;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+form {
+    white-space:nowrap;
+    display: inline-block;
+    padding-right: 550;
+    /*align-items: center;*/
+    /*color: blue;
+    /*background-color: green; */
+    /*text-align: center;*/
+}
+button {
+    background-color: lightgreen;
+}
+.thumbnail {
+    background-color: lightgrey;
+}
+.upper-part {
+    display: inline-block;
+    margin-left: 50;
+    /*padding-left: 450;*/
+    /*display: flex;*/
+    /*align-content: flex-end;*/
+    padding-top: 30;
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alberto" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><span class="fa fa-camera" aria-hidden="true"></span> Photonomia</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="alberto">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Log in</a></li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- content start -->
+    <div class="container">
+        <div class='upper-part'>
+            <form method="POST">
+                        <div class="field has-addons form-inline mr-auto mb-4">
+                            <div class="control is-expanded" style="display: inline-block;" >
+                                <input class="input" name="term" type="text" placeholder="City Name">
+                            </div>
+                            <div class="control" style="display: inline-block;" >
+                                <button class="btn btn-indigo btn-rounded btn-sm my-0 waves-effect waves-light" style="display: inline-block;">
+                                    Search Term
+                                </button>
+                            </div>
+                        </div>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                {% set message_class = 'is-success' %}
+
+                                {% if category == 'error' %}
+                                    {% set message_class = 'is-danger' %}
+                                {% endif %}
+                                <div class="alert alert-danger">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </form>
+          <!-- <form class="form-inline mr-auto mb-4">
+          <input class="form-control mr-sm-2" type="text" name="term" placeholder="Search" aria-label="Search">
+          <button class="btn btn-indigo btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button>
+        </form> -->
+        </div>
+        <!-- <div class="jumbotron">
+            <h1><i class="fa fa-camera" aria-hidden="true"></i> Lenses</h1>
+            <p>Images provided free of copyright by wonderful people</p>
+        </div> -->
+        <br><br>
+
+        <div class="row flex">
+        {% for image in image_data %}
+            <div class="col-lg-4 col-sm-6">
+
+                <div class="thumbnail">
+                    <img src="{{image}}">
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
