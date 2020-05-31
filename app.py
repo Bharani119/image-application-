@@ -95,9 +95,14 @@ def index_post():
     return render_template('index.html', image_data=image_data)
 
 
-# @app.route('/aboutme', methods=['GET', 'POST'])
-# def aboutme():
-#     return render_template('about.html')
+@app.route('/aboutme', methods=['GET', 'POST'])
+def aboutme():
+    return render_template('about.html')
+
+
+@app.route('/contactme', methods=['GET', 'POST'])
+def contactme():
+    return render_template('contact.html')
 
 
 # @app.route('/showall')

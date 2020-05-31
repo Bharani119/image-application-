@@ -73,13 +73,13 @@ button {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand"><span class="fa fa-camera" aria-hidden="true"></span> Photonomia</a>
+                <a href="{{ url_for('index_post') }}" class="navbar-brand"><span class="fa fa-camera" aria-hidden="true"></span> Photonomia</a>
             </div>
 
             <div class="collapse navbar-collapse" id="alberto">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ url_for('aboutme') }}">About</a></li>
+                    <li><a href="{{ url_for('contactme') }}">Contact</a></li>
                 </ul>
 
                 <!-- <ul class="nav navbar-nav navbar-right">

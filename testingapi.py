@@ -1,7 +1,7 @@
 import requests
 import urllib.request as urllib
 # phu = input('enter search term')
-phu = 'baby'
+phu = 'wallpaper'
 r = requests.get(
     f'https://api.unsplash.com/search/collections?query={phu}&page=1&per_page=20&client_id=a3LeIdw1sJLTf4wV3b-9K9GUZ8UJ-PF9QkwL1mLAUYc')
 # r = requests.get(
@@ -18,6 +18,8 @@ for img_data in data['results']:
     except:
         continue
     print(img_url)
+# print(data['results'][2])
+print(data['total'])
 # for i in data:
 #     print(i['urls']['small'])
 # print(data[0]['urls']['small'])
